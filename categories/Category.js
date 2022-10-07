@@ -12,4 +12,8 @@ const Category = connection.define("categories", {
   },
 });
 
-module.exports(Category);
+// Cria tabela no banco de dados
+
+// Category.sync({ force: true });
+
+module.exports = Category;
