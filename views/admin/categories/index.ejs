@@ -29,6 +29,7 @@
             method="POST"
             action="/categories/delete"
             style="display: inline"
+            onsubmit="confirmDelete(event, this)"
           >
             <input type="hidden" name="id" value="<%= category.id  %> " />
             <button class="btn btn-danger">Deletar</button>
@@ -39,4 +40,16 @@
     </tbody>
   </table>
 </div>
+
 <%-include('../../partials/footer.ejs') %>
+
+<script>
+  function confirmDelete(event, form) {
+    event.preventDefault();
+    console.log("O formulário não foi enviado");
+    let decison = confirm("Você quer deletar essa categoria");
+    if (decison) {
+      form.submit();
+    }
+  }
+</script>
