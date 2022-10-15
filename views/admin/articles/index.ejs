@@ -15,7 +15,34 @@
         <th>Ações</th>
       </tr>
     </thead>
-    <tbody></tbody>
+    <tbody>
+      <% articles.forEach(articles => { %>
+      <tr>
+        <th><%= articles.id %></th>
+        <th><%= articles.title %></th>
+        <th><%= articles.slug %></th>
+        <th><%= articles.category.title %></th>
+        <th>
+          <a
+            href="/admin/categories/edit/<%= articles.id %> "
+            class="btn btn-warning"
+          >
+            Editar
+          </a>
+
+          <form
+            method="POST"
+            action="/categories/delete"
+            style="display: inline"
+            onsubmit="confirmDelete(event, this)"
+          >
+            <input type="hidden" name="id" value="<%= articles.id  %> " />
+            <button class="btn btn-danger">Deletar</button>
+          </form>
+        </th>
+      </tr>
+      <% });%>
+    </tbody>
   </table>
 </div>
 
