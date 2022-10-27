@@ -24,7 +24,7 @@
         <th><%= articles.category.title %></th>
         <th>
           <a
-            href="/admin/categories/edit/<%= articles.id %> "
+            href="/admin/articles/edit/<%= articles.id %> "
             class="btn btn-warning"
           >
             Editar
@@ -32,7 +32,7 @@
 
           <form
             method="POST"
-            action="/categories/delete"
+            action="/articles/delete"
             style="display: inline"
             onsubmit="confirmDelete(event, this)"
           >
