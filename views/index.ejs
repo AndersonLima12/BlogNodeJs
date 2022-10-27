@@ -1,6 +1,27 @@
-<%- include('partials/header.ejs') %>
+<%- include('partials/header.ejs') %> <%- include('partials/homenavbar.ejs') %>
+<br />
 <body>
-  <!-- <%- include('partials/navbar.ejs') %> -->
-  <h1>TESTANDO AS PARTIALS</h1>
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Bem-vindo</h1>
+      <p class="lead">
+        Este é um simples blog criado para meios de aprendizado.
+      </p>
+      <hr class="my-4" />
+      <p></p>
+    </div>
+    <% articles.forEach(articles => { %>
+    <div class="card">
+      <div class="card-header">
+        <h2><%= articles.title %></h2>
+      </div>
+      <br />
+      <div class="card-body">
+        <a href="#" class="btn btn-success">Ler artigo</a>
+      </div>
+    </div>
+    <br />
+    <%});%>
+  </div>
 </body>
 <%- include('partials/footer.ejs') %>
